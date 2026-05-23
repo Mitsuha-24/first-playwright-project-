@@ -18,7 +18,9 @@ The scripts in this repository target the **[Automation Test Store](https://auto
 ├── tests/               # Main automated test scripts & test specs
 ├── .gitignore           # Excludes local reports, caches, and node_modules
 ├── package.json         # Project metadata, dependencies, and execution scripts
-└── playwright.config.js # Centralized multi-browser Playwright execution settings
+├── playwright.config.js # Centralized multi-browser Playwright execution settings
+└── testData.js          # The data required for testing 
+
 ```
 
 ## 🛠️ How to Run
