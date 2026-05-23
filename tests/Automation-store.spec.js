@@ -30,7 +30,7 @@ await page.goto('https://automationteststore.com/', { waitUntil: 'domcontentload
         await expect(navItem).toBeVisible();
     }
     for (const linktxt of expectedLinks) {
-        const navItem = page.getByRole('link' , {name: linktxt , exact: true}).click({force:true});
+        const navItem =await page.getByRole('link' , {name: linktxt , exact: true}).click({force:true});
        // await page.goto('https://automationteststore.com/', { waitUntil: 'domcontentloaded' });
     }
 });
@@ -49,6 +49,7 @@ test('Test navigation ', async ({ page }) => {
 
 // test login scenARIO
 test('rEGISTER ', async ({ page }) => {
+  test.slow();
   await page.goto('https://automationteststore.com/');
   await page.getByRole('listitem').filter({ hasText: 'Login or register' }).click();
   await page.getByRole('button', { name: ' Continue' }).click();
@@ -103,6 +104,7 @@ test('Test valid login', async ({ page }) => {
 
 //invalid login scenario
 test('Test invalid login', async ({ page }) => {
+  test.slow();
   await page.goto('https://automationteststore.com/');
   await page.getByRole('link', { name: 'Login or register' }).click();
   await page.locator('#loginFrm_loginname').click();
